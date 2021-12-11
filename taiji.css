@@ -1,0 +1,41 @@
+.div {
+    position: absolute;
+    left: 70px;
+    top: 20px;
+    animation: taiji 1.4s infinite linear;
+}
+
+.write {
+    width: 80px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 100px 100px 0 0;
+}
+
+.black {
+    width: 80px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 0 0 100px 100px;
+}
+
+.write_dian {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border: 14px solid #000;
+    border-radius: 100px;
+    position: absolute;
+    top: 22px;
+}
+
+.black_dian {
+    width: 12px;
+    height: 12px;
+    background-color: #000;
+    border: 14px solid #fff;
+    border-radius: 100px;
+    position: absolute;
+    top: 18px;
+    left: 40px;
+}
