@@ -1,4 +1,4 @@
 # site
 web site
 $abc
-${aaa}
+${{secret.key}}
