@@ -1,4 +1,5 @@
 # site
 web site
 $abc
-${{secret.key}}
+${{secrets.key}}
+end
