@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>梦幻西游+太极图</title>
+    <link rel="stylesheet" href="css/taiji.css">
+    <link rel="stylesheet" href="css/xiyou.css">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+
+<body>
+	<audio src="music/monkey_bro.mp3" autoplay="autoplay" loop="loop"></audio>
+    <div class="footer">
+        <div class="west"></div>
+        <div class="west"></div>
+        <div class="west"></div>
+        <div class="west"></div>
+        <div class="div" onclick="audio()" >
+            <div class="write"></div>
+            <div class="black"></div>
+            <div class="write_dian"></div>
+            <div class="black_dian"></div>
+        </div>
+    </div>
+</body>
+<script>
+	function audio(){
+		if (paused()) {
+			play();
+		} else{
+			paused();
+		}
+	}
+</script>
+</html>
