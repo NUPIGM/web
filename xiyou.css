@@ -2,7 +2,7 @@
     .footer {
         width: 100%;
         height: 750px;
-        background-image: url(../img/ft2.webp);
+        background-image: url(./img/ft2.webp);
         background-size: cover;
         background-color: rgb(134,165,211);
     }
@@ -13,7 +13,7 @@
     }
 
     .west:nth-child(1) {
-        background-image: url(../img/west_01.png);
+        background-image: url(./img/west_01.png);
         width: 200px;
         height: 180px;
         top: 300PX;
@@ -22,7 +22,7 @@
     }
 
     .west:nth-child(2) {
-        background-image: url(../img/west_02.png);
+        background-image: url(./img/west_02.png);
         width: 200px;
         height: 180px;
         top: 300PX;
@@ -31,7 +31,7 @@
     }
 
     .west:nth-child(3) {
-        background-image: url(../img/west_03.png);
+        background-image: url(./img/west_03.png);
         width: 170px;
         height: 240px;
         top: 270PX;
@@ -40,7 +40,7 @@
     }
 
     .west:nth-child(4) {
-        background-image: url(../img/west_04.png);
+        background-image: url(./img/west_04.png);
         width: 210px;
         height: 200px;
         top: 300PX;
