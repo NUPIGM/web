@@ -1,3 +1,3 @@
 #### Welcome !
 
-[点击进入主页](./test)
+[点击进入主页](nupigm.tk)
