@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+}
+header {
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
+.margin{
+  margin: 20px;
+}
+/* 以上是公共样式结构 */

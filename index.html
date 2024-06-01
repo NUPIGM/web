@@ -1,19 +1,63 @@
-<html lang="zh-cn">  
-
+<!DOCTYPE html>
+<html lang="zh-CN">
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/index.css">
-    <link rel="icon" href="icon.png">
-    <title>HELLO PERSON</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Author Name" />
+    <meta name="date" content="Publish Date" />
+    <title></title>
+    <link rel="stylesheet" href="./styles/common.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <script src="./javascripts/index.js"></script>
   </head>
-  
   <body>
-  <header>header</header>
-  <nav>nav</nav>
-  <main>main</main>
-  <aside>aside</aside>
-  <footer>footer</footer>
+    <header>
+      <!-- <img src="../favicon.ico" alt="网站Logo" /> -->
+      <nav></nav>
+    </header>
+    <div class="container">
+      <main>
+        <section class="margin">
+          <p><a href="./documents/article.html">文章内容 测试</a></p>
+        </section>
+        <section class="margin">
+          <p><a href="./documents/video.html">视频内容 测试</a></p>
+        </section>
+        <section class="margin">
+          <p><a onclick="login()">测试</a></p>
+        </section>
+      </main>
+      <aside>
+        <div class="sidebar">
+          <h1 id="toggle-button" onclick="hiddenDiv()">Login or Register</h1>
+          <div id="hidden-login" class="hidden">
+            <form>
+              <label for="login-input">account</label><br />
+              <input
+                type="text"
+                id="login-input"
+                name="login-input"
+                required
+              /><br />
+              <label for="password-input">Password</label><br />
+              <input
+                type="password"
+                id="password-input"
+                name="password"
+                required
+              />
+              <br />
+              <button type="button"id="login-button" class="" onclick="login()">提交</button>
+              <button type="button" id="register-button" class="">注册</button>
+              <button type="reset" id="reset-button" class="">重置</button>
+            </form>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <footer>
+      <address></address>
+    </footer>
   </body>
-
 </html>

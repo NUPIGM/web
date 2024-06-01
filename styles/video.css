@@ -1,0 +1,11 @@
+main {
+  display: flex;
+}
+video {
+  position: sticky;
+  top: 2px;
+  z-index: 1;
+  width: 70%;
+  margin: 20px;
+}
+

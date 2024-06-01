@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>login</title>
+</head>
+
+<body>
+	<a href="./index.html">主页</a>
+	<form>
+		Username: <input type="text" id="user" name="user"><br>
+		Password: <input type="password" id="password" name="password">
+		<input type="reset" value="重置输入">
+	</form>
+	<button id="login" onclick="login()">登录</button>
+	<button id="register" onclick="register()">注册</button>
+	<button id="retrieve" onclick="retrieve()">找回密码</button>
+
+	<p>按钮后输出</p>
+	<div id="output"></div>
+
+
+
+
+</body>
+
+<script>
+	function login() {
+		let userValue = document.getElementById("user").value;
+		let passwordValue = document.getElementById("password").value;
+		fetch("/admin", {
+			method: "POST",
+			// headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({
+				task: "login",
+				user: userValue,
+				password: passwordValue,
+				verification: "verfication"
+			})
+		})
+			.then(res => res.text())
+			.then(data => {
+				console.log(data);
+				document.getElementById("output").textContent = data;
+			})
+			.catch(error => console.error('Error:', error));
+	}
+	function register() {
+		
+		let userValue = document.getElementById("user").value;
+		let passwordValue = document.getElementById("password").value;
+		fetch("/admin", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({
+				"task": "register",
+				"user": userValue,
+				"password": passwordValue,
+				"verification": "verfication"
+			})
+		})
+			.then(res => res.text())
+			.then(data => {
+				console.log(data);
+				document.getElementById("output").textContent = data;
+			})
+			.catch(error => console.error('Error:', error));
+	}
+	function retrieve() {
+
+	}
+
+</script>
+
+</html>
