@@ -31,3 +31,9 @@ function login() {
       console.error(error);
     });
 }
+// 搜索框回车事件
+function updateSearchAction() {
+  const searchEngine = document.getElementById('searchEngine').value;
+  const searchForm = document.getElementById('searchForm');
+  searchForm.action = searchEngine;
+}
