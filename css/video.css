@@ -25,9 +25,6 @@
   color: white;
   z-index: 10; /* Ensure it appears on top */
 }
-.sidebar-logo{
-  align-items: center;
-}
 .footer{
   position: relative;
   left: var(--sidebar-width);
