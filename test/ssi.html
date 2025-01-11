@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+</head>
+<body>
+  <h1>文章列表</h1>
+  <ul id="article-list"></ul>
+  <div id="article-content"></div>
+
+  <script>
+    async function fetchArticles() {
+      const response = await fetch('/api/articles');
+      const articles = await response.json();
+      const articleList = document.getElementById('article-list');
+      articles.forEach(article => {
+        const li = document.createElement('li');
+        li.textContent = article.title;
+        li.onclick = () => {
+          history.pushState({ id: article.id }, article.title, `/article/${article.id}`);
+          fetchArticleContent(article.id);
+        };
+        articleList.appendChild(li);
+      });
+    }
+
+    async function fetchArticleContent(id) {
+      const response = await fetch(`/api/articles/${id}`);
+      const article = await response.json();
+      const articleContent = document.getElementById('article-content');
+      articleContent.innerHTML = `<h2>${article.title}</h2><p>${article.content}</p>`;
+    }
+
+    window.onpopstate = function(event) {
+      if (event.state && event.state.id) {
+        fetchArticleContent(event.state.id);
+      } else {
+        document.getElementById('article-content').innerHTML = '';
+      }
+    };
+
+    fetchArticles();
+
+    // 检查初始 URL
+    const path = window.location.pathname;
+    if (path.startsWith('/article/')) {
+      const id = path.split('/').pop();
+      fetchArticleContent(id);
+    }
+  </script>
+</body>
+</html>

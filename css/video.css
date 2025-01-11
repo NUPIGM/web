@@ -1,105 +1,56 @@
+@import url("common.css");
 :root {
   --error-img: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgb(200 200 200 / 80%)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='feather feather-image'><rect x='3' y='3' width='18' height='18' rx='2' ry='2'></rect><circle cx='8.5' cy='8.5' r='1.5'></circle><polyline points='21 15 16 10 5 21'></polyline></svg>");
-  --sidebar-width: 150px;
+  --sidebar-width: min(max(100px, 10%), 200px);
+  /* 导入其它css */
 }
-/* 轮播图 */
-.slide > img {
-  width: 100%;
-}
-.slide-text {
-  width: 15%;
-  height: 300px;
-  position: absolute;
-  right: 50px;
-  top: 50px;
-  text-align: center;
-  align-content: center;
-  background-image: linear-gradient(
-    180deg,
-    transparent,
-    rgba(22, 22, 26, 0.8) 22%,
-    rgba(22, 22, 26, 0.8) 81%,
-    transparent
-  );
-}
-/* 边栏分类 */
-.sidebar {
-  width: var(--sidebar-width);
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  text-align: center;
-  background-image: linear-gradient(
-    270deg,
-    rgba(22, 22, 26, 0),
-    rgba(22, 22, 26, 0.9)
-  );
-  color: white;
-  z-index: 10; /* Ensure it appears on top */
-}
-.footer {
-  position: relative;
-  left: var(--sidebar-width);
-  bottom: 0;
-  width:  calc(100% - var(--sidebar-width));
-  height: 50px;
-}
-.filter {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  background-image: linear-gradient(
-    180deg,
-    rgba(22, 22, 26, 0),
-    rgba(22, 22, 26, 0.9)
-  );
-}
+
+
 /* 存放视频内容的窗口 */
 .content {
-  width: calc(100% - var(--sidebar-width));
-  position: relative;
-  left: var(--sidebar-width);
+  padding-left: var(--sidebar-width);
+  font-size: 0;
 }
-/* 单个个视频图片的样式 */
-.video-cover {
+/* #region单个图片块的样式 */
+.pack {
   display: inline-block;
-  position: relative;
-  width: 200px;
-  height: 300px;
-  margin: 5px 5px 5px 5px;
+  padding: 5px;
+  overflow: hidden; /* 隐藏溢出部分 */
 }
 /* 视频封面的图片区域 */
-.video-cover > .video-img {
-  height: 260px;
-  width: 100%;
+.cover {
   position: relative;
 }
 /* 封面img */
-.video-img > img {
-  width: 100%;
-  height: 100%;
+.cover > img {
   object-fit: cover; /* 确保图片按比例填充 */
 }
+.cover,
+.cover > img {
+  width: 200px;
+  height: 260px;
+  border-radius: 10px;
+}
 /* position: absolute 不能对 position: static 进行定位。 */
-.video-img > .video-score {
+.score {
   position: absolute;
   right: 5px;
   bottom: 5px;
   color: #00a9f5;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: bold;
 }
-.video-img > .video-mask {
-  width: 100%;
+.mask {
+  width: inherit;
   height: 30%;
+  border-radius: inherit;
   position: absolute;
   bottom: 0;
   background-image: linear-gradient(
     180deg,
     transparent,
-    rgba(0, 0, 0, 0.35) 60%,
-    rgba(0, 0, 0, 0.55)
+    rgb(65 62 62 / 60%) 45%,
+    rgb(8 8 8 / 87%)
   );
 }
 /* before 负责展示默认的失败图片，这里大神是将裂开的图放到了中间，所以background后面给了两个50%。想要使默认图撑满可以改为100% */
@@ -112,7 +63,7 @@
   left: 0;
   top: 0;
   color: transparent;
-} */
+}  */
 /* after用来展示上面的说明文字 */
 /* .video-img > img::after {
   content: attr(alt);
@@ -136,24 +87,46 @@
   text-overflow: ellipsis;
 }  */
 /* 封面下面的字体 */
-.video-cover > .video-name,
-.video-cover > .video-overview {
+.caption,
+.overview {
   text-align: center;
+  vertical-align: center;
+  font-size: 16px;
   margin: 0;
-  align-content: center;
-  min-height: 20px;
-  font-size: 14px;
 }
-/* .video-cover > .video-name:empty {
+.caption:empty {
   width: 6em;
   height: 15px;
   background-color: azure;
   text-align: center;
 }
 
-.video-cover > .video-overview:empty {
+.overview:empty {
   width: 10em;
   height: 15px;
   background-color: rgb(57, 235, 235);
   text-align: center;
-} */
+}
+/* #endregion单个图片块的样式 */
+
+.hidden {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(22, 22, 22);
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 15;
+}
+#detail:target {
+  display: block;
+}
+.display {
+  display: block;
+}
+.close {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(170, 170, 170);
+}

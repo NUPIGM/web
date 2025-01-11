@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: grid;
+        grid-template-columns: minmax(0, 1000px);
+        justify-content: center;
+      }
+      .flexbox {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+
+        border: 1px solid #000;
+      }
+      .flexbox1 {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-content: center;
+        border: 1px solid #000;
+      }
+      .flexbox2 {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-content: center;
+        border: 1px solid #000;
+      }
+      .flexbox1>div,
+      .flexbox2>div {
+        background-color: rgb(255, 151, 151);
+        font-size: 20px;
+        border: #000 1px solid;
+      }
+      .gridbox {
+        display: grid;
+        border: 1px solid #000;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 0.5fr));
+      }
+      .gridbox div {
+        background-color: rgb(146, 255, 146);
+        border: #000 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>flexbox</h2>
+      <div class="flexbox">
+        <div class="flexbox1">
+          <div>Lorem, ipsum dolor.</div>
+          <div>Lorem, ipsum dolor dolor.</div>
+          <div>Lorem, ipsum dolor.</div>
+          <div>Lorem.</div>
+          <div>Lorem, ipsum.</div>
+        </div>
+        <div class="flexbox2">
+          <div>Lorem.</div>
+          <div>Lorem.</div>
+        </div>
+      </div>
+      <h2>gridbox</h2>
+      <div class="gridbox">
+        <div>Lorem, ipsum dolor.</div>
+        <div>Lorem, ipsum.</div>
+        <div>Lorem, ipsum dolor.</div>
+        <div>Lorem.</div>
+        <div>Lorem, ipsum.</div>
+      </div>
+    </div>
+  </body>
+</html>

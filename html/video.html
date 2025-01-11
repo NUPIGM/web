@@ -5,120 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="nupi9m" />
     <meta name="date" content="2024-12-26" />
+    <meta
+      name="description"
+      content="这是我的网站，暂时还没有内容，我会慢慢添加。"
+    />
     <title>video</title>
-    <link rel="stylesheet" href="../css/normalize.css" />
-    <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/video.css" />
     <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script> -->
+    <script type="module" src="../js/video.js"></script>
+
   </head>
 
   <body>
-    <header>
-      <div class="slide">
-        <img
-          src="https://liangcang-material.alicdn.com/prod/upload/df9c349d619e4cedb8d2779dbcc0c545.webp.jpg"
-          alt="轮播图"
-        />
-        <div class="slide-text">
-          <p>第一张</p>
-          <p>第二张</p>
-          <p>第三张</p>
-        </div>
-      </div>
+    
+    <header id="header">
     </header>
-    <aside>
-      <div class="sidebar">
-        <div class="sidebar-logo">
-          <svg
-            width="60"
-            height="60"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="rgb(255, 255, 255)"
-              stroke-width="2"
-              fill="none"
-            />
-            <polygon points="10,8 16,12 10,16" fill="rgb(255, 255, 255)" />
-          </svg>
+<main>
+  <div>
+    <div class="content">
+      <div class="pack">
+        <div class="cover">
+          <img
+            src="https://img.lzzyimg.com/upload/vod/20241012-1/295cff4c977123288ec82a53e5766282.jpg"
+            alt="video"
+          />
+          <div class="mask"></div>
+          <span class="score">9.0</span>
         </div>
-
-        <p>电视剧</p>
-        <p>电影</p>
-        <p>综艺</p>
-        <p>动漫</p>
-        <p>体育</p>
+        <p class="caption">蛮荒仙界</p>
+        <p class="overview">更新至第33集</p>
       </div>
-    </aside>
-    <main>
-      <div class="filter"></div>
-      <div class="content">
-        
-        <div class="video-cover">
-          <div class="video-img">
-            <img
-              src="https://img.lzzyimg.com/upload/vod/20241012-1/295cff4c977123288ec82a53e5766282.jpg"
-              alt="video"
-            />
-            <div class="video-mask"></div>
-            <span class="video-score">9.0</span>
-          
-          </div>
-          <p class="video-name">蛮荒仙界</p>
-          <p class="video-overview">更新至第33集</p>
-        </div>
-        <div class="video-cover">
-          <div class="video-img">
-            <img
-              src="https://img.lzzyimg.com/upload/vod/20241012-1/295cff4c977123288ec82a53e5766282.jpg"
-              alt="video"
-            />
-            <div class="video-mask"></div>
-            <span class="video-score">9.0</span>
-          
-          </div>
-          <p class="video-name">蛮荒仙界</p>
-          <p class="video-overview">更新至第33集</p>
-        </div>
-  
-        <div class="video-cover">
-          <div class="video-img">
-            <img
-              src=""
-              alt="video"
-            />
-            <div class="video-mask"></div>
-            <span class="video-score">9.0</span>
-          
-          </div>
-          <p class="video-name">123</p>
-          <p class="video-overview">123</p>
-        </div>
-        <div class="video-cover">
-          <div class="video-img">
-            <img
-              src=""
-              alt="video"
-            />
-            <div class="video-mask"></div>
-            <span class="video-score">9.0</span>
-          
-          </div>
-          <p class="video-name">321</p>
-          <p class="video-overview">321</p>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <div class="footer">
-        <p>版权所有 &copy; 2024</p>
-      </div>
-    </footer>
+    </div>
+  </div>
+</main>
+<footer id="footer"></footer>
   </body>
 </html>

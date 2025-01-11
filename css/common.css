@@ -1,4 +1,51 @@
-body{
-    background-color: rgb(22, 22, 22);
-    color:rgb(255, 255, 255)
+/* 导入初始化样式 */
+@import url("normalize.css");
+
+:root {
+  /* 配色 */
+  --font-color: #cdcdcd; /* Default font color */
+  --bg-color: #1b1b1b; /* Default background color */
+  --header-color: #CCFFFF; /* Header color */
+  --footer-color: #56a0f8; /* Footer color */
+  --font-size:20px;
+  /* 版心宽度 */
+  --center-width:1200px
+
+}
+body {
+  background-color:#ffffff;
+  color: #24292e;
+  font-size: 20px;
+  /* 版心布局 */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+header{
+  background-color: #f1f1f1;
+}
+.topBar{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+ }
+ .title{
+   font-size: 1.2em;
+ }
+ 
+main{
+  align-self: center;
+  max-width: var(--center-width);
+}
+footer{
+  background-color: #f1f1f1;
+  font-size: 0.8em;
+}
+header,main,footer{
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.topBar,.bottomBar{
+  max-width: var(--center-width);
+  margin: 0 auto;
 }

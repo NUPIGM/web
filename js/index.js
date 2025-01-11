@@ -1,4 +1,11 @@
+
+import { loaded } from './common.js';
+
+
+document.addEventListener("DOMContentLoaded", loaded());
+
 const urlParams = new URLSearchParams(window.location.search);
+
 
 // 获取所有参数名和值
 let query = "?";
