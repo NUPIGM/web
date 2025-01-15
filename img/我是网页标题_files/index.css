@@ -12,6 +12,7 @@
   gap: var(--auto-gap);
 }
 .new{
+  
   padding: clamp(15px,1.4vh,25px);
   background-color: rgb(255 255 255 / 50%);
   border-radius: 20px;
