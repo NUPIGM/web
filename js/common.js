@@ -8,6 +8,14 @@ export function loaded() {
         console.log("<header>标签是由js实现分开的，所以需要加载...已完成。")
       });
 
+    // 加载边栏
+    fetch('/html/mySide.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('mySide').innerHTML = data;
+        console.log("<mySide>标签是由js实现分开的，所以需要加载...已完成。")
+      });
+
     // 加载脚部
     fetch('/html/footer.html')
       .then(response => response.text())
@@ -16,3 +24,4 @@ export function loaded() {
         console.log("<footer>标签是由js实现分开的，所以需要加载...已完成。")
       });
   };
+//# sourceMappingURL=jquery.min.map

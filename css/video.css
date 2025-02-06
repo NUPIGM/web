@@ -8,8 +8,6 @@
 
 /* 存放视频内容的窗口 */
 .content {
-  padding-left: var(--sidebar-width);
-  font-size: 0;
 }
 /* #region单个图片块的样式 */
 .pack {
