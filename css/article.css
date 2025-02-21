@@ -1,5 +1,4 @@
-/* 导入全局样式 */
-@import url(common.css);
+
 /* 主内容区域 */
 .content > dl {
   margin: 0;
@@ -7,7 +6,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: var(--auto-gap);
+  gap: var(--auto-rows-gap);
 }
 .list{
   display: flex;
@@ -27,6 +26,8 @@
   height: 5em;
   float: left;
   margin-right: 10px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 .new h4 {
   margin: 0;
@@ -37,13 +38,11 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   display: -webkit-box;
-  line-height: 22px;
-  max-height: 44px;
   opacity: 0.85;
   overflow: hidden;
-  text-overflow: ellipsis;
   font-size: 0.8em;
-  margin: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .new i {
   font-size: 0.75em;

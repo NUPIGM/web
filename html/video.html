@@ -10,82 +10,161 @@
       content="这是我的网站，暂时还没有内容，我会慢慢添加。"
     />
     <title>video</title>
-    <link rel="stylesheet" href="../css/video.css" />
-    <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script> -->
-    <script type="module" src="../js/video.js"></script>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/video.css" />
+    <script src="/js/hls.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/video.js"></script>
+    <script src="/font/iconfont.js"></script>
   </head>
 
   <body>
-    <header id="header"></header>
+    <header id="header">
+      <div class="topBar">
+        <h1 class="title" id="title"><a href="/">暂时什么都没有</a></h1>
+        <nav>
+          <a href="/">首页</a>
+          <a href="/html/about.html">关于</a>
+          <a href="/html/article.html">文章页</a>
+          <a href="/html/video.html">视频页</a>
+          <a href="/html/talk.html">说说</a>
+          <a href="/html/photo.html">相册</a>
+          <a href="/html/message.html">留言</a>
+          <a href="/html/404.html">404</a>
+        </nav>
+      </div>
+    </header>
     <main>
-      <aside class="left"></aside>
-      <div class="content">
+      <div class="content" id="container">
         <div class="pack">
-          <div class="cover">
+          <div class="cover" onclick="setParams(this.children[0].id)">
             <img
-              src="https://img.lzzyimg.com/upload/vod/20241012-1/295cff4c977123288ec82a53e5766282.jpg"
-              alt="video"
+              id="20252"
+              class="video"
+              src="https://assets.heimuer.tv/imgs/2019/03/22/deba603f6a9a4f8596cf91da0669591e.jpg"
+              alt="名侦探柯南"
             />
             <div class="mask"></div>
             <span class="score">9.0</span>
           </div>
-          <p class="caption">蛮荒仙界</p>
-          <p class="overview">更新至第33集</p>
-        </div>
-        <div class="pack">
-          <div class="cover">
-            <img
-              src="https://img.lzzyimg.com/upload/vod/20241012-1/295cff4c977123288ec82a53e5766282.jpg"
-              alt="video"
-            />
-            <div class="mask"></div>
-            <span class="score">9.0</span>
-          </div>
-          <p class="caption">蛮荒仙界</p>
-          <p class="overview">更新至第33集</p>
-        </div>
-        <div class="pack">
-          <div class="cover">
-            <img
-              src="https://img.lzzyimg.com/upload/vod/20241012-1/295cff4c977123288ec82a53e5766282.jpg"
-              alt="video"
-            />
-            <div class="mask"></div>
-            <span class="score">9.0</span>
-          </div>
-          <p class="caption">蛮荒仙界</p>
-          <p class="overview">更新至第33集</p>
-        </div>
-        <div class="pack">
-          <div class="cover">
-            <img
-              src="https://img.lzzyimg.com/upload/vod/20241012-1/295cff4c977123288ec82a53e5766282.jpg"
-              alt="video"
-            />
-            <div class="mask"></div>
-            <span class="score">9.0</span>
-          </div>
-          <p class="caption">蛮荒仙界</p>
-          <p class="overview">更新至第33集</p>
-        </div>
-        <div class="pack">
-          <div class="cover">
-            <img
-              src="https://img.lzzyimg.com/upload/vod/20241012-1/295cff4c977123288ec82a53e5766282.jpg"
-              alt="video"
-            />
-            <div class="mask"></div>
-            <span class="score">9.0</span>
-          </div>
-          <p class="caption">蛮荒仙界</p>
-          <p class="overview">更新至第33集</p>
+          <p
+            class="caption"
+            onclick="setParams(this.previousElementSibling.children[0].id)"
+          >
+            名侦探柯南
+          </p>
+          <p class="overview">更新至【1210】</p>
         </div>
       </div>
-      <!-- 侧边栏开始 -->
-      <div class="mySide" id="mySide"></div>
-      <!-- 侧边栏结束 -->
-      <aside class="right"></aside>
+
+      <div class="mySide" id="mySide">
+        <dl class="dlStyle">
+          <dt>
+            <h4>
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-guanzhuxuanzhong"></use></svg
+              >关注我
+            </h4>
+            <small>Focus Me</small>
+          </dt>
+          <dd class="focusMe">本站内容仅供学习和参阅，不做任何商业用途。</dd>
+        </dl>
+        <div class="author">
+          <img src="/img/ava.gif" alt="" />
+          <span>麦兜兜</span>
+          <p>踮起脚尖就更接近阳光</p>
+          <div>
+            <strong>309</strong> <strong>2333</strong> <strong>46</strong
+            ><span>运行天数</span><span>今日访问ip</span><span>文章数量</span>
+          </div>
+        </div>
+        <div class="search">
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="请输入关键字"
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='请输入关键字'"
+          />
+          <button>搜索</button>
+        </div>
+        <dl class="dlStyle">
+          <dt>
+            <h4>
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-lingdang"></use></svg
+              >最新更新
+            </h4>
+            <small>Close New</small>
+          </dt>
+          <dd class="CloseNew">
+            <!-- <p>
+            <iframe
+              width="100%"
+              height="30"
+              src="https://i.tianqi.com/?c=code&a=getcode&id=34&py=fuzhou&icon=1"
+              frameborder="0"
+            ></iframe>
+          </p> -->
+            <p>最近：<strong>麦兜兜</strong> <span>天前 12:15</span></p>
+            <p
+              title="麦兜兜 最后更新了什么叫空手套白狼？看完我惊呆了，大智慧！"
+            >
+              更新了<b>文章</b>
+            </p>
+            <p>历史上的今天:<a>0</a></p>
+          </dd>
+        </dl>
+        <dl class="dlStyle">
+          <dt>
+            <h4>
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-qiqiu"></use></svg
+              >说说
+            </h4>
+            <small>Shuo Shuo</small>
+          </dt>
+          <dd class="shuoShuo">
+            <li>
+              <div>7-26</div>
+              <strong
+                >今年夏天不是一般的热，我来给大家推荐几个解暑方法:
+                第一，想想你喜欢的人，心凉半截！
+                第二，想想自己的月收入，心拔凉拔凉地！
+                第三，想想自己的年纪，后背嗖嗖窜凉风！！我试了一下，去热效果很不错。刚刚又心血来潮查询了一下银行卡余额，查完后我默默地盖上被子，把电褥子也插上了！
+                ！.. .. ..我真的不热😂 😂 😂</strong
+              >
+            </li>
+            <li>
+              <div>7-26</div>
+              <strong
+                >今年夏天不是一般的热，我来给大家推荐几个解暑方法:
+                第一，想想你喜欢的人，心凉半截！
+                第二，想想自己的月收入，心拔凉拔凉地！
+                第三，想想自己的年纪，后背嗖嗖窜凉风！！我试了一下，去热效果很不错。刚刚又心血来潮查询了一下银行卡余额，查完后我默默地盖上被子，把电褥子也插上了！
+                ！.. .. ..我真的不热😂 😂 😂</strong
+              >
+            </li>
+            <li>
+              <div>7-26</div>
+              <strong
+                >今年夏天不是一般的热，我来给大家推荐几个解暑方法:
+                第一，想想你喜欢的人，心凉半截！
+                第二，想想自己的月收入，心拔凉拔凉地！
+                第三，想想自己的年纪，后背嗖嗖窜凉风！！我试了一下，去热效果很不错。刚刚又心血来潮查询了一下银行卡余额，查完后我默默地盖上被子，把电褥子也插上了！
+                ！.. .. ..我真的不热😂 😂 😂</strong
+              >
+            </li>
+          </dd>
+        </dl>
+      </div>
     </main>
-    <footer id="footer"></footer>
+    <footer id="footer">
+      <div class="bottomBar">
+        <p>Copyright&copy;2025. All Rights Reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
