@@ -1,15 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404</title>
+    <title>分页显示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .item {
+            display: none; /* 默认隐藏 */
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .pagination {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .pagination button {
+            padding: 5px 10px;
+            margin: 2px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            background-color: #f8f8f8;
+        }
+
+        .pagination button.active {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    404 Page Not Found
-    <br>
-    <br>
-    <a href="/">Go to Homepage</a>
-    <br>
+
+<div class="container">
+    <div id="list">
+        <!-- JavaScript 生成 50+ 项 -->
+    </div>
+
+    <div class="pagination" id="pagination"></div>
+</div>
+
+<script>
+    const listContainer = document.getElementById("list");
+    const paginationContainer = document.getElementById("pagination");
+
+    // 生成 55 个元素（可以修改）
+    const totalItems = 55;
+    const itemsPerPage = 10;
+    let currentPage = 1;
+
+    // 生成列表项
+    for (let i = 1; i <= totalItems; i++) {
+        let div = document.createElement("div");
+        div.className = "item";
+        div.textContent = `Item ${i}`;
+        listContainer.appendChild(div);
+    }
+
+    const items = document.querySelectorAll(".item");
+
+    function showPage(page) {
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+
+        // 隐藏所有
+        items.forEach((item, index) => {
+            item.style.display = index >= start && index < end ? "block" : "none";
+        });
+
+        // 更新分页按钮
+        updatePagination();
+    }
+
+    function updatePagination() {
+        paginationContainer.innerHTML = "";
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+        if (totalPages > 1) {
+            for (let i = 1; i <= totalPages; i++) {
+                let button = document.createElement("button");
+                button.textContent = i;
+                button.classList.add(i === currentPage ? "active" : "");
+                button.addEventListener("click", () => {
+                    currentPage = i;
+                    showPage(currentPage);
+                });
+                paginationContainer.appendChild(button);
+            }
+        }
+    }
+
+    // 启动分页（如果超过 50 个）
+    if (totalItems > 50) {
+        showPage(1);
+    } else {
+        items.forEach(item => item.style.display = "block");
+    }
+</script>
+
 </body>
 </html>

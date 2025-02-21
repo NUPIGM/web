@@ -1,0 +1,50 @@
+
+/* #region */
+.content {
+  z-index: 1;
+  background-color: white;
+  border-radius: var(--radius);
+  width: clamp(0px, 100%, var(--content-width));
+  border: 0;
+}
+.content>div {
+  padding: 20px;
+}
+.content  h4 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25em;
+}
+.content  i {
+  font-size: 0.75em;
+  padding-bottom: 5px;
+  color: #9499a0;
+}
+.content  video {
+  display: block;
+  margin: 10px auto;
+  width: 100%; /* 或者 100%，具体根据布局调整 */
+  aspect-ratio: 16/9; /* 宽高比 */
+  object-fit:contain; /* 让封面和视频比例放大区域 */
+  background-color:  #000;
+
+}
+#vod-episodes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 5px;
+  padding: 5px;
+  overflow: auto;
+  max-height: 300px;
+}
+#vod-episodes span{
+  border: black 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+}
+#vod-episodes span:hover{
+  cursor: pointer;
+  mix-blend-mode: difference;
+  color: white; /* 初始颜色，确保在浅色背景下可见 */
+}
+/* #endregion */

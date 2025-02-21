@@ -1,0 +1,8 @@
+/* 导入全局样式 */
+@import url(common.css);
+/* 主内容区域 */
+.content{
+  background-color: var(--div-color);
+  border-radius: var(--radius);
+  padding: 20px;
+}
