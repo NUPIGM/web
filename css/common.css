@@ -1,5 +1,7 @@
+@import "./normalize.css";
 /* 导入初始化样式 */
 @import "./normalize.css";
+@import "./aside.css";
 :root {
   /* 配色 */
   --primary-font-color: #101010;
@@ -8,11 +10,11 @@
   --header-color: #f6f6f6;
   --footer-color: #e0e0e0;
   --font-size: 20px;
-  --div-color: rgba(255, 255, 255, 0);
+  --div-color: rgba(0, 0, 0, 0);
   /* 版心宽度 */
   --mySide-width: 384px;
   --content-width: 816px;
-  --auto-columns-gap: clamp(5px, 3vw, 15px);
+  --auto-columns-gap: clamp(5px, 3vw, 20px);
   --auto-rows-gap: clamp(5px, 3.5vh, 20px);
   --center-width: calc(
     var(--mySide-width) + var(--content-width) + var(--auto-columns-gap)
@@ -65,8 +67,8 @@ footer {
   background-color: var(--footer-color);
 }
 .topBar {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .topBar > nav {
   font-size: 1em;
@@ -98,6 +100,7 @@ main {
   display: flex;
   column-gap: var(--auto-columns-gap);
   justify-content: center;
+  align-items: flex-start;
 }
 header,
 main,
@@ -282,10 +285,7 @@ footer {
 /* #region media*响应式 */
 
 @media only screen and (max-width: 1024px) {
-  .left,
-  .right {
-    display: none;
-  }
+
 }
 @media only screen and (max-width: 430px) {
   .mySide {

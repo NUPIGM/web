@@ -4,19 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="nupi9m" />
-    <meta name="date" content="2024-12-26" />
+    <meta name="date" content="2025-1-26" />
     <meta
       name="description"
       content="这是我的网站，暂时还没有内容，我会慢慢添加。"
     />
     <title>网站标题</title>
     <link rel="shortcut icon" href="favicon.ico?v=1" type="image/x-icon" />
-    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/index.css" />
-    <script type="module" src="js/common.js"></script>
-    <script type="module" src="js/index.js"></script>
-    <script src="font/iconfont.js"></script>
+    <script src="font/iconfont.js" defer></script>
+    <script type="module" src="js/common.js" defer></script>
+    <script type="module" src="js/index.js" defer></script>
   </head>
   <body>
     <header id="header">
@@ -34,9 +33,16 @@
         </nav>
       </div>
     </header>
+
     <main>
-      <div class="content"></div>
-      <div class="mySide" id="mySide">
+      <aside class="chat-channel members-box">
+        <h4>成员</h4>
+        <div class="">内容</div>
+        <input type="text" id="members" name="members" placeholder="搜索成员" />
+        <button type="submit">搜索</button>
+      </aside>
+      <div class="content" hidden></div>
+      <div class="mySide" id="mySide" style="display: none;">
         <dl class="dlStyle">
           <dt>
             <h4>
@@ -49,7 +55,9 @@
           <dd class="focusMe">本站内容仅供学习和参阅，不做任何商业用途。</dd>
         </dl>
         <div class="author">
-          <img src="/img/ava.gif" alt="" />
+          <div id="avatar">
+            <img src="/img/ava.gif" alt="" />
+          </div>
           <span>麦兜兜</span>
           <p>踮起脚尖就更接近阳光</p>
           <div>
@@ -138,8 +146,42 @@
           </dd>
         </dl>
       </div>
+      <aside class="chat-channel chat-box">
+        <h3 class="chat-title">频道</h3>
+        <div class="chat-content" id="chat-content">
+          <div class="other-message">
+            <img src="/img/ava.gif" alt="头像" class="chat-portrait" />
+            <div class="other-flex">
+              <span class="chat-name">name</span>
+              <p class="other-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+          </div>
+          <div class="my-message">
+            <img src="/img/ava.gif" alt="头像" class="chat-portrait" />
+            <div class="my-flex">
+              <span class="chat-name">name</span>
+              <p class="my-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+          </div>
+        </div>
+        <form id="chat-form" class="chat-form">
+          <textarea
+            id="chat-input"
+            placeholder="请输入内容"
+            disabled
+            class="chat-input"
+            rows="1"
+          ></textarea>
+
+          <button type="submit" id="chat-sub" class="chat-sub">连接</button>
+        </form>
+      </aside>
+      <div class="pull-chat">pull</div>
     </main>
-    
     <footer id="footer">
       <div class="bottomBar">
         <p>Copyright&copy;2025. All Rights Reserved.</p>

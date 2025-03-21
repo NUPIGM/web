@@ -1,4 +1,4 @@
 {
     "liveServer.settings.port": 5500,
-    "livePreview.defaultPreviewPath": "/html/video/content.html"
+    "livePreview.defaultPreviewPath": "/index.html"
 }
