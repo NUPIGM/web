@@ -6,7 +6,22 @@ function loaded() {
       document.getElementById("header").innerHTML = data;
       console.log("<header>标签是由js实现分开的，所以需要加载...已完成。");
     });
+function loaded() {
+  // 加载头部
+  fetch("/html/header.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("header").innerHTML = data;
+      console.log("<header>标签是由js实现分开的，所以需要加载...已完成。");
+    });
 
+  // 加载边栏
+  fetch("/html/mySide.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("mySide").innerHTML = data;
+      console.log("<mySide>标签是由js实现分开的，所以需要加载...已完成。");
+    });
   // 加载边栏
   fetch("/html/mySide.html")
     .then((response) => response.text())
