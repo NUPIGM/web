@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="视频解析页面，提供视频播放和解析功能，支持视频输入">
+    <meta name="keywords" content="视频解析, 视频播放, HTML5, 视频播放器">
+    <meta name="author" content="Your Name">
+    <meta name="google-adsense-account" content="ca-pub-7341004552430340">
+    <title>视频解析页面</title>
+    <style>
+        /* 重置部分样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 使用 flexbox 让页面内容居中 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding-top: 50px; /* 给导航栏留出空间 */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 水平居中 */
+            justify-content: flex-start; /* 垂直方向从顶部开始 */
+            min-height: 100vh; /* 确保内容总是至少占满整个视口 */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        /* 导航栏样式 */
+        nav {
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* 页面容器样式 */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 80px; /* 防止内容被导航栏遮挡 */
+        }
+
+        /* 视频容器样式 */
+        .video-container {
+            width: 100%;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 750px;
+            height: 400px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        input[type="url"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+        }
+
+        /* 跳转链接样式 */
+        .feature-links ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .feature-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .feature-links a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .feature-links a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="/html/tool/about.html">功能</a></li>
+            <li><a href="/html/tool/about.html">关于我们</a></li>
+            <li><a href="#contact">联系我们</a></li>
+        </ul>
+    </nav>
+        <h2>功能介绍</h2>
+        <p>本页面支持视频链接解析并播放，可以根据输入的URL自动加载视频。支持iQIYI、YouKu、Tencent、Bilibili等平台的视频嵌入。以下是与视频解析相关的一些有用链接和资源：</p>
+    <div class="container" id="home">
+        <h1>视频解析与播放</h1>
+
+        <input type="url" id="videoUrl" placeholder="请输入视频链接" />
+
+        <button onclick="loadVideo()">播放视频</button>
+
+        <div class="video-container">
+            <iframe id="videoPlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+    <div class="container" id="features">
+        <div class="feature-links">
+            <h3>相关链接：</h3>
+            <ul>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+    <div class="container" id="contact">
+        <h2>联系我们</h2>
+        <p>如果有任何问题，欢迎与我们联系。</p>
+    </div>
+
+    <footer>
+        <p>© 2025 视频解析系统。所有权利保留。</p>
+    </footer>
+
+    <script>
+        function loadVideo() {
+            var url = document.getElementById('videoUrl').value;
+            var videoPlayer = document.getElementById('videoPlayer');
+            
+            if (url) {
+                    var videoId = url; 
+                    videoPlayer.src = `https://jx.hls.one?url=${videoId}`;
+             
+            } else {
+                alert("请输入有效的视频链接！");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
