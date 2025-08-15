@@ -5,15 +5,10 @@
 :root {
   /* 配色 */
   --primary-font-color: #101010;
-  --secondary-font-color:#656565;
-  --bg-color: #eeeeee;
   --header-color: #f6f6f6;
   --footer-color: #e0e0e0;
-  --primary-font-color: #101010;
   --secondary-font-color:#656565;
   --bg-color: #eeeeee;
-  --header-color: #f6f6f6;
-  --footer-color: #e0e0e0;
   --font-size: 20px;
   --div-color: rgba(0, 0, 0, 0);
   /* 版心宽度 */
@@ -23,13 +18,10 @@
   --auto-rows-gap: clamp(5px, 3.5vh, 20px);
   --center-width: calc(
     var(--mySide-width) + var(--content-width) + var(--auto-columns-gap)
-    var(--mySide-width) + var(--content-width) + var(--auto-columns-gap)
   );
   --radius: 20px;
   --double-shadow: -3px -4px 3px #ffffff90, 4px 5px 5px #434343;
 
-  --radius: 20px;
-  --double-shadow: -3px -4px 3px #ffffff90, 4px 5px 5px #434343;
 
 }
 /* 字体图标 */
@@ -68,21 +60,16 @@
   }
 }
 body {
-  color: var(--primary-font-color);
   background-color: var(--bg-color);
   color: var(--primary-font-color);
-  background-color: var(--bg-color);
   font-size: var(--font-size);
   /* 版心布局 */
   display: flex;
   flex-direction: column;
   align-items: stretch;
   row-gap: var(--auto-rows-gap);
-  row-gap: var(--auto-rows-gap);
 }
 header {
-  background-color: var(--header-color);
-  box-shadow: 0 5px 5px #434343d1;
   background-color: var(--header-color);
   box-shadow: 0 5px 5px #434343d1;
   position: sticky;
@@ -90,7 +77,6 @@ header {
   z-index: 10;
 }
 footer {
-  background-color: var(--footer-color);
   background-color: var(--footer-color);
 }
 .topBar {
@@ -126,7 +112,6 @@ footer {
 main {
   display: flex;
   column-gap: var(--auto-columns-gap);
-  column-gap: var(--auto-columns-gap);
   justify-content: center;
   align-items: flex-start;
 }
@@ -135,18 +120,14 @@ main,
 footer {
   padding-left: clamp(5px, 1.5vw, 20px);
   padding-right: clamp(5px, 1.5vw, 20px);
-  padding-left: clamp(5px, 1.5vw, 20px);
-  padding-right: clamp(5px, 1.5vw, 20px);
 }
 .content {
-  width: clamp(0px, 100%, var(--content-width));
   width: clamp(0px, 100%, var(--content-width));
 }
 .mySide {
   display: flex;
   flex-direction: column;
   width: clamp(0px, 34%, var(--mySide-width));
-  row-gap: var(--auto-rows-gap);
   row-gap: var(--auto-rows-gap);
 }
 /* #region 作者信息栏目 */
@@ -155,7 +136,6 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: clamp(5px, 1.6vh, 15px);
   row-gap: clamp(5px, 1.6vh, 15px);
   position: relative;
 }
@@ -166,7 +146,6 @@ footer {
   bottom: 0;
   z-index: -1;
   border-radius: 20px;
-  box-shadow: var(--double-shadow);
   box-shadow: var(--double-shadow);
   content: "";
   
@@ -186,10 +165,8 @@ footer {
   height: 3.5em;
   border-radius: 100px;
   border-width: 0.1em;
-  border-width: 0.1em;
   border-style: solid;
   border-color: rgb(255, 255, 255);
-  transition: cubic-bezier(0.7, 0.2, 0.3, 0.8)0.8s all;
   transition: cubic-bezier(0.7, 0.2, 0.3, 0.8)0.8s all;
 }
 #avatar > img:hover {
@@ -214,7 +191,6 @@ footer {
   row-gap: clamp(5px, 1vh, 25px);
   column-gap: clamp(5px, 1.5vw, 25px);
   margin-bottom: clamp(5px, 1.6vh, 15px);
-  margin-bottom: clamp(5px, 1.6vh, 15px);
   font-size: 0.8em;
   text-align: center;
   color: rgb(85, 85, 85);
@@ -231,7 +207,6 @@ footer {
   height: 35px;
   border-radius: 15px;
   border-width: 0;
-  box-shadow: var(--double-shadow);
   box-shadow: var(--double-shadow);
   font-size: 0.75em;
 }
@@ -252,7 +227,6 @@ footer {
   border-radius: 20px;
   margin: 0;
   box-shadow: var(--double-shadow);
-  box-shadow: var(--double-shadow);
 }
 .dlStyle > dt > h4 {
   display: inline;
@@ -265,7 +239,6 @@ footer {
 }
 .dlStyle > dt {
   background-color: var(--div-color);
-  box-shadow: 0px -3px 3px 0px #979797ba inset;
   box-shadow: 0px -3px 3px 0px #979797ba inset;
 
   border-top-left-radius: 20px;
@@ -286,7 +259,6 @@ footer {
 .focusMe {
   padding: 1em;
   text-align: center;
-  font-size: 0.8em;
   font-size: 0.8em;
   color: rgb(142, 142, 142);
 }
@@ -330,7 +302,6 @@ footer {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  align-content: center;
   align-content: center;
   font-size: 0.75em;
   color: rgba(36, 41, 46, 0.8);
